@@ -1,5 +1,7 @@
 <?php
 
+namespace backend\rules;
+
 use yii\rbac\Rule;
 
 class BlogRule extends Rule
