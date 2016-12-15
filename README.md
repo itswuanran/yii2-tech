@@ -56,11 +56,11 @@ mysql -uusername -ppassword dbname < tech.sql
 ## 效果图
 
  - 前端页面
-![前端页面](http://oss-cn-qingdao.aliyuncs.com/hljstatic/default/20161215/7c12ce2166205222.png
+![前端页面](https://github.com/anruence/yii2-tech/raw/master/tech.png
  "前端页面")
 
 - 后台管理
-![后台管理](http://oss-cn-qingdao.aliyuncs.com/hljstatic/default/20161215/32eecb68c2205114.png
+![后台管理](https://github.com/anruence/yii2-tech/raw/master/backend.png
  "后台管理")
 
 ## nginx配置
