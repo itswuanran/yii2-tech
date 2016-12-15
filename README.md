@@ -1,15 +1,17 @@
-# yii2-tech
 # 后台管理系统beta
 
 ## 安装说明：
 
 ```bash
 git clone https://github.com/anruence/yii2-tech.git
-cd yii-tech
-composer install
+
+cd yii2-tech
+
+composer install --no-dev
 ```
 
 ## 数据库迁移
+ 
  - tech.sql中保存了sql语句，暂时没写migrate脚本。后续会扩展。
 
 修改测试环境的common/config/main-local.php文件
@@ -65,7 +67,25 @@ mysql -uusername -ppassword dbname < tech.sql
 
 ## nginx配置
 
-TBD
-```
 
 ```
+server {
+    listen       80;
+    server_name  tech.domain.app;
+    root  /data/yii2-tech/tech/web;
+    index index.php;
+    location / {
+        try_files $uri /index.php?$args;
+        # index index.php index.html;
+    }
+
+    location ~ \.php$ {
+        fastcgi_index  index.php;
+        fastcgi_pass unix:/var/run/php7.0-fpm.sock;
+        # fastcgi_pass 127.0.0.1:9000;
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+        include fastcgi_params;
+    }
+}
+```
+TBD
