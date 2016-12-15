@@ -48,6 +48,18 @@ php yii migrate --migrationPath=@mdm/admin/migrations
 
 ```
 
+提供了sql文件，可以用命令直接导入。
+
+```bash
+mysql -uusername -ppassword dbname < tech.sql
+```
+## 效果图
+
+[![前端页面](http://oss-cn-qingdao.aliyuncs.com/hljstatic/default/20161215/7c12ce2166205222.png "前端页面")](anruence.com "前端页面")
+
+[![后台管理](http://oss-cn-qingdao.aliyuncs.com/hljstatic/default/20161215/32eecb68c2205114.png
+ "后台管理")](mis.dev.anruence.com "后台管理")
+
 ## nginx配置
 
 TBD
