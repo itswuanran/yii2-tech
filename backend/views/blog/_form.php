@@ -37,6 +37,7 @@ use anruence\editormd\EditorMd;
 //                'dialogMaskBgColor' => '#000', // 设置透明遮罩层的背景颜色，全局通用，默认为#fff
                 'imageUpload' => true,
                 'imageFormats' => ['jpg', 'jpeg', 'gif', 'png', 'bmp', 'webp'],
+                //TODO 图片上传地址
                 'imageUploadURL' => '/file/blog-upload?type=default&filekey=editormd-image-file',
             ]
         ]
