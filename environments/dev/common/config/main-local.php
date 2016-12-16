@@ -4,8 +4,8 @@ return [
         'db' => [
             'class' => 'yii\db\Connection',
             'dsn' => 'mysql:host=localhost;dbname=tech',
-            'username' => 'tech',
-            'password' => '',
+            'username' => 'homestead',
+            'password' => 'secret',
             'charset' => 'utf8',
         ],
         'mutex' => [

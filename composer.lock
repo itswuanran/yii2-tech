@@ -1460,16 +1460,16 @@
         },
         {
             "name": "michelf/php-smartypants",
-            "version": "1.8.0",
+            "version": "1.8.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/michelf/php-smartypants.git",
-                "reference": "d1b0848f26ff6e2260da2eb75ea9175d84c53878"
+                "reference": "47d17c90a4dfd0ccf1f87e25c65e6c8012415aad"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/michelf/php-smartypants/zipball/d1b0848f26ff6e2260da2eb75ea9175d84c53878",
-                "reference": "d1b0848f26ff6e2260da2eb75ea9175d84c53878",
+                "url": "https://packagist.phpcomposer.com/files/michelf/php-smartypants/47d17c90a4dfd0ccf1f87e25c65e6c8012415aad.zip",
+                "reference": "47d17c90a4dfd0ccf1f87e25c65e6c8012415aad",
                 "shasum": ""
             },
             "require": {
@@ -1506,7 +1506,7 @@
                 "typographer",
                 "typography"
             ],
-            "time": "2016-11-13 21:14:11"
+            "time": "2016-12-13 01:01:17"
         },
         {
             "name": "mihaildev/yii2-ckeditor",

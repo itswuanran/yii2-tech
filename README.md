@@ -48,6 +48,10 @@ php yii migrate --migrationPath=@yii/rbac/migrations
 
 php yii migrate --migrationPath=@mdm/admin/migrations
 
+## 集成了yii2-audit组件，如需使用迁移表即可
+
+php yii migrate --migrationPath=@bedezign/yii2/audit/migrations
+
 ```
 
 提供了sql文件，可以用命令直接导入。
