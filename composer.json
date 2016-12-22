@@ -28,14 +28,18 @@
         "yiisoft/yii2-apidoc": "~2.1.0",
         "kartik-v/yii2-grid": "@dev",
         "kartik-v/yii2-markdown":"@dev",
-        "johnitvn/yii2-ajaxcrud": "*",
-        "dmstr/yii2-adminlte-asset": "2.*",
+        "kartik-v/yii2-widgets": "*",
         "mdmsoft/yii2-admin": "~2.0",
-        "nezhelskoy/yii2-highlight": "*",
+        "johnitvn/yii2-ajaxcrud": "*",
         "bedezign/yii2-audit": "*",
-        "anruence/yii2-editor.md": "dev-master",
         "jpunanua/yii2-seotools": "*",
-        "nullref/yii2-useful": "dev-master"
+        "dmstr/yii2-adminlte-asset": "2.*",
+        "nezhelskoy/yii2-highlight": "*",
+        "2amigos/yii2-ckeditor-widget": "*",
+        "wbraganca/yii2-fancytree-widget": "*",
+        "nullref/yii2-useful": "dev-master",
+        "anruence/yii2-editor.md": "dev-master",
+        "devgroup/yii2-tag-dependency-helper": "*"
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "*",

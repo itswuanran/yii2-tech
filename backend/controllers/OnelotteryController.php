@@ -3,13 +3,13 @@
 namespace backend\controllers;
 
 use Yii;
-use common\models\Onelottery;
-use backend\searchs\OnelotterySearch;
 use yii\web\Controller;
-use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\web\Response;
 use yii\helpers\Html;
+use common\models\Onelottery;
+use yii\web\NotFoundHttpException;
+use backend\searchs\OnelotterySearch;
 
 /**
  * OnelotteryController implements the CRUD actions for Onelottery model.
