@@ -7,7 +7,7 @@ use johnitvn\ajaxcrud\CrudAsset;
 use johnitvn\ajaxcrud\BulkButtonWidget;
 
 /* @var $this yii\web\View */
-/* @var $searchModel mis\models\OneprotermSearch */
+/* @var $searchModel backend\searchs\OneprotermSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
 $this->title = 'Oneproterms';
