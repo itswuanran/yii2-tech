@@ -25,6 +25,7 @@
         "yiisoft/yii2-bootstrap": "*",
         "yiisoft/yii2-swiftmailer": "*",
         "yiisoft/yii2-redis": "^2.0",
+        "yiisoft/yii2-apidoc": "~2.1.0",
         "kartik-v/yii2-grid": "@dev",
         "kartik-v/yii2-markdown":"@dev",
         "johnitvn/yii2-ajaxcrud": "*",

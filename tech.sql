@@ -251,32 +251,6 @@ CREATE TABLE `blog` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `log_upload`
---
-
-DROP TABLE IF EXISTS `log_upload`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `log_upload` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `userId` int(11) DEFAULT NULL,
-  `title` varchar(128) NOT NULL,
-  `filename` varchar(255) DEFAULT NULL,
-  `fileori` varchar(255) DEFAULT NULL,
-  `params` longblob,
-  `values` longblob,
-  `warning` longblob,
-  `keys` text,
-  `type` tinyint(1) DEFAULT NULL,
-  `userCreate` int(11) DEFAULT NULL,
-  `userUpdate` int(11) DEFAULT NULL,
-  `updateDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `createDate` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
 -- Table structure for table `migration`
 --
 
@@ -287,42 +261,6 @@ CREATE TABLE `migration` (
   `version` varchar(180) NOT NULL,
   `apply_time` int(11) DEFAULT NULL,
   PRIMARY KEY (`version`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Table structure for table `tbl_dynagrid`
---
-
-DROP TABLE IF EXISTS `tbl_dynagrid`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `tbl_dynagrid` (
-  `id` varchar(100) NOT NULL COMMENT 'Unique dynagrid setting identifier',
-  `filter_id` varchar(100) DEFAULT NULL COMMENT 'Filter setting identifier',
-  `sort_id` varchar(100) DEFAULT NULL COMMENT 'Sort setting identifier',
-  `data` varchar(5000) DEFAULT NULL COMMENT 'Json encoded data for the dynagrid configuration',
-  PRIMARY KEY (`id`),
-  KEY `tbl_dynagrid_FK1` (`filter_id`),
-  KEY `tbl_dynagrid_FK2` (`sort_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Table structure for table `tbl_dynagrid_dtl`
---
-
-DROP TABLE IF EXISTS `tbl_dynagrid_dtl`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `tbl_dynagrid_dtl` (
-  `id` varchar(100) NOT NULL COMMENT 'Unique dynagrid detail setting identifier',
-  `category` varchar(10) NOT NULL COMMENT 'Dynagrid detail setting category "filter" or "sort"',
-  `name` varchar(150) NOT NULL COMMENT 'Name to identify the dynagrid detail setting',
-  `data` varchar(5000) DEFAULT NULL COMMENT 'Json encoded data for the dynagrid detail configuration',
-  `dynagrid_id` varchar(100) NOT NULL COMMENT 'Related dynagrid identifier',
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `tbl_dynagrid_dtl_UK1` (`name`,`category`,`dynagrid_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
