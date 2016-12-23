@@ -47,6 +47,18 @@
                         ],
                     ],
                     [
+                        'label' => '权限控制',
+                        'icon' => 'fa fa-gears',
+                        'url' => '#',
+                        'items' => [
+                            ['label' => '路由', 'icon' => 'fa fa-circle-o', 'url' => '/admin/route',],
+                            ['label' => '权限', 'icon' => 'fa fa-circle-o', 'url' => '/admin/permission',],
+                            ['label' => '角色', 'icon' => 'fa fa-circle-o', 'url' => '/admin/role',],
+                            ['label' => '分配', 'icon' => 'fa fa-circle-o', 'url' => '/admin/assignment',],
+                            ['label' => '菜单', 'icon' => 'fa fa-circle-o', 'url' => '/admin/menu',],
+                        ],
+                    ],
+                    [
                         'label' => 'Same tools',
                         'icon' => 'fa fa-share',
                         'url' => '#',
@@ -76,20 +88,5 @@
                 ],
             ]
         ) ?>
-        <ul class="sidebar-menu">
-            <li class="treeview">
-                <a href="#">
-                    <i class="fa fa-gears"></i> <span>权限控制</span>
-                    <i class="fa fa-angle-left pull-right"></i>
-                </a>
-                <ul class="treeview-menu">
-                    <li><a href="/admin/route"><i class="fa fa-circle-o"></i> 路由</a></li>
-                    <li><a href="/admin/permission"><i class="fa fa-circle-o"></i> 权限</a></li>
-                    <li><a href="/admin/role"><i class="fa fa-circle-o"></i> 角色</a></li>
-                    <li><a href="/admin/assignment"><i class="fa fa-circle-o"></i> 分配</a></li>
-                    <li><a href="/admin/menu"><i class="fa fa-circle-o"></i> 菜单</a></li>
-                </ul>
-            </li>
-        </ul>
     </section>
 </aside>
