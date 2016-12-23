@@ -7,7 +7,6 @@ use kartik\widgets\DepDrop;
 use yii\helpers\Url;
 use common\models\Category;
 use yii\helpers\ArrayHelper;
-use mis\widgets\FileInputWidget;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\Oneproduct */
@@ -73,15 +72,7 @@ use mis\widgets\FileInputWidget;
             'url' => Url::to(['/category/third'])
         ]
     ])->label('三级分类'); ?>
-    <?= $form->field($model, 'headimg')->hiddenInput(['id' => 'headimgid']) ?>
-    <div class="form-group">
-        <div class="col-sm-6 col-sm-offset-3">
-            <?php
-            $preview[] = '<img src="' . $model->headimg . '" class="file-preview-image" width="100%"></img>';
-            echo FileInputWidget::singleImgInput('headimgid', 1, $preview, 'productImg');
-            ?>
-        </div>
-    </div>
+
     <?= $form->field($model, 'details')->textInput() ?>
 
     <?= $form->field($model, 'price')->textInput(['maxlength' => true]) ?>
