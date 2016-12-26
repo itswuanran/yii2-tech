@@ -61,12 +61,12 @@ mysql -uusername -ppassword dbname < tech.sql
 ```
 ## 效果图
 
- - 前端页面
-![前端页面](https://github.com/anruence/yii2-tech/raw/master/tech.png
+- 前端页面
+![前端页面](https://github.com/anruence/yii2-tech/raw/master/docs/tech.png
  "前端页面")
 
 - 后台管理
-![后台管理](https://github.com/anruence/yii2-tech/raw/master/backend.png
+![后台管理](https://github.com/anruence/yii2-tech/raw/master/docs/backend.png
  "后台管理")
 
 ## nginx配置
@@ -94,5 +94,8 @@ server {
 ```
 
 ## 树形分类功能暂时只更新部分代码
+- 分类管理
+![分类管理](https://github.com/anruence/yii2-tech/raw/master/docs/category.png
+ "分类管理")
 
 ## 支付系统正在开发中
