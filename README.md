@@ -69,8 +69,26 @@ mysql -uusername -ppassword dbname < tech.sql
 ![后台管理](https://github.com/anruence/yii2-tech/raw/master/docs/backend.png
  "后台管理")
 
-## nginx配置
 
+
+## 树形分类功能暂时只更新部分代码
+- 分类管理
+![分类管理](https://github.com/anruence/yii2-tech/raw/master/docs/category.png
+ "分类管理")
+- 商品管理(详情页待集成ckeditor)
+![商品管理](https://github.com/anruence/yii2-tech/raw/master/docs/oneproduct.png
+ "商品管理")
+- audit访问记录
+![audit](https://github.com/anruence/yii2-tech/raw/master/docs/audit.png
+ "audit")
+
+## 支付系统正在开发中
+
+> 微信（支持多商户，APP & H5）
+
+> 支付宝（支持多商户，APP & H5）
+
+## nginx配置
 
 ```
 server {
@@ -92,10 +110,3 @@ server {
     }
 }
 ```
-
-## 树形分类功能暂时只更新部分代码
-- 分类管理
-![分类管理](https://github.com/anruence/yii2-tech/raw/master/docs/category.png
- "分类管理")
-
-## 支付系统正在开发中
