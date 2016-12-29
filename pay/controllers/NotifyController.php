@@ -1,10 +1,10 @@
 <?php
 namespace pay\controllers;
 
-use pay\alipay\AlipayConfig;
-use pay\alipay\AlipayNotify;
 use Yii;
 use yii\web\Controller;
+use pay\alipay\AlipayConfig;
+use pay\alipay\AlipayNotify;
 
 /**
  * 支付或者退款通知
