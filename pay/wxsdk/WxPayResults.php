@@ -15,7 +15,7 @@ class WxPayResults extends WxPayDataBase
      *
      * 检测签名
      */
-    public function CheckSign($config=[])
+    public function CheckSign($config = [])
     {
         //fix异常
         if (!$this->IsSignSet()) {
@@ -71,7 +71,7 @@ class WxPayResults extends WxPayDataBase
      * @param string $xml
      * @throws WxPayException
      */
-    public static function Init($xml, $config=[])
+    public static function Init($xml, $config = [])
     {
         $obj = new self();
         $obj->FromXml($xml);

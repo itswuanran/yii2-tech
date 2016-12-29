@@ -515,10 +515,11 @@ class WxPayUnifiedOrder extends WxPayDataBase
     /**
      * 设置微信配置
      * @param string $value
+     * @return
      **/
     public function SetAllconf($confArr)
     {
-        $this->values['allconf'] = $confArr;
+        return $this->values['allconf'] = $confArr;
     }
 
     /**

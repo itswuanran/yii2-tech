@@ -17,7 +17,7 @@ class WxPayDataBase
      * 设置签名，详见签名生成算法
      * @param string $value
      **/
-    public function SetSign($conf=[])
+    public function SetSign($conf = [])
     {
         $sign = $this->MakeSign($conf);
         $this->values['sign'] = $sign;
@@ -103,7 +103,7 @@ class WxPayDataBase
      * 生成签名
      * @return 签名，本函数不覆盖sign成员变量，如要设置签名需要调用SetSign方法赋值
      */
-    public function MakeSign($conf=[])
+    public function MakeSign($conf = [])
     {
         //签名步骤一：按字典序排序参数
         ksort($this->values);

@@ -427,7 +427,7 @@ class WxPayApi
      * 回调类成员函数方法:notify(array($this, you_function));
      * $callback  原型为：function function_name($data){}
      */
-    public static function notify($callback, &$msg, $config=[])
+    public static function notify($callback, &$msg, $config = [])
     {
         //获取通知的数据
 //        $xml = $GLOBALS['HTTP_RAW_POST_DATA'];
@@ -581,10 +581,10 @@ class WxPayApi
         curl_close($ch);
         if (!$errorNo) {
             if ($url == 'https://api.mch.weixin.qq.com/secapi/pay/refund') {
-                Yii::info('WxPay Refund request data:' . json_encode($xml) , 'wxpay.curl-refund-request');
+                Yii::info('WxPay Refund request data:' . json_encode($xml), 'wxpay.curl-refund-request');
                 Yii::info('WxPay Refund response data:' . $data, 'wxpay.curl-refund');
             } else {
-                Yii::info('WxPay request data:' . json_encode($xml) , 'wxpay.curl-trade-request');
+                Yii::info('WxPay request data:' . json_encode($xml), 'wxpay.curl-trade-request');
                 Yii::info('WxPay response data:' . $data, 'wxpay.curl-trade');
             }
         }
@@ -649,7 +649,7 @@ class WxPayApi
             !$inputObj->IsOpenidSet() || !$inputObj->IsCheckNameSet() ||
             !$inputObj->IsReUserNameSet() || !$inputObj->IsAmountSet() ||
             !$inputObj->IsDescSet() || !$inputObj->IsSpbillCreateIpSet()
-            ) {
+        ) {
             throw new WxPayException("转账接口中，mch_appid, mchid, nonce_str, partner_trade_no, openid, check_name, re_user_name, amount, desc, spbill_create_ipout_trade_no、transaction_id缺一不可！");
         }
 

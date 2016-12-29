@@ -1,9 +1,10 @@
 <?php
+
+namespace pay\wxsdk;
+
 /**
  *    配置账号信息
  */
-namespace pay\wxsdk;
-
 class WxPayConfig
 {
     //=======【基本信息设置】=====================================
