@@ -1,6 +1,8 @@
 <?php
 
-/* *
+namespace pay\alipay;
+
+/**
  * 类名：AlipaySubmit
  * 功能：支付宝各接口请求提交类
  * 详细：构造支付宝各接口表单HTML文本，获取远程HTTP数据
@@ -10,9 +12,6 @@
  * 以下代码只是为了方便商户测试而提供的样例代码，商户可以根据自己网站的需要，按照技术文档编写,并非一定要使用该代码。
  * 该代码仅供学习和研究支付宝接口使用，只是提供一个参考。
  */
-
-namespace pay\alipaysdk;
-
 class AlipaySubmit
 {
     var $alipay_config;
@@ -21,11 +20,19 @@ class AlipaySubmit
      */
     var $alipay_gateway_new = 'https://mapi.alipay.com/gateway.do?';
 
+    /**
+     * 注入商户配置文件
+     * AlipaySubmit constructor.
+     * @param $alipay_config
+     */
     public function __construct($alipay_config)
     {
         $this->alipay_config = $alipay_config;
     }
 
+    /**
+     * @param $alipay_config
+     */
     public function AlipaySubmit($alipay_config)
     {
         $this->__construct($alipay_config);
@@ -34,12 +41,13 @@ class AlipaySubmit
     /**
      * 生成签名结果
      * @param $para_sort 已排序要签名的数组
-     * return 签名结果字符串
+     * @return 签名结果字符串
      */
     public function buildRequestMysign($para_sort)
     {
         //把数组所有元素，按照“参数=参数值”的模式用“&”字符拼接成字符串
         $prestr = AlipayCore::createLinkstring($para_sort);
+
         $mysign = "";
         switch (strtoupper(trim($this->alipay_config['sign_type']))) {
             case "RSA" :
@@ -54,8 +62,8 @@ class AlipaySubmit
 
     /**
      * 生成要请求给支付宝的参数数组
-     * @param $para_temp 请求前的参数数组
-     * @return 要请求的参数数组
+     * @param string $para_temp 请求前的参数数组
+     * @return string 要请求的参数数组
      */
     public function buildRequestPara($para_temp)
     {
@@ -78,7 +86,7 @@ class AlipaySubmit
     /**
      * 生成要请求给支付宝的参数数组
      * @param $para_temp 请求前的参数数组
-     * @return 要请求的参数数组字符串
+     * @return string 要请求的参数数组字符串
      */
     public function buildRequestParaToString($para_temp)
     {
@@ -94,9 +102,9 @@ class AlipaySubmit
     /**
      * 建立请求，以表单HTML形式构造（默认）
      * @param $para_temp 请求参数数组
-     * @param $method 提交方式。两个值可选：post、get
-     * @param $button_name 确认按钮显示文字
-     * @return 提交表单HTML文本
+     * @param string $method 提交方式。两个值可选：post、get
+     * @param string $button_name 确认按钮显示文字
+     * @return string 提交表单HTML文本
      */
     public function buildRequestForm($para_temp, $method, $button_name)
     {
@@ -117,27 +125,6 @@ class AlipaySubmit
     }
 
     /**
-     * 建立请求，以表单HTML形式构造（默认）
-     * @param $para_temp 请求参数数组
-     * @param $method 提交方式。两个值可选：post、get
-     * @param $button_name 确认按钮显示文字
-     * @return 提交表单HTML文本
-     */
-    public function buildRequestFormForPay($para_temp, $method)
-    {
-        //待请求参数数组
-        $para = $this->buildRequestPara($para_temp);
-
-        $sHtml = "<form id='alipay_form' name='alipay_form' action='" . $this->alipay_gateway_new . "' method='" . $method . "'>";
-        while (list ($key, $val) = each($para)) {
-            $sHtml .= "<input type='hidden' name='" . $key . "' value='" . $val . "'/>";
-        }
-        //submit按钮控件请不要含有name属性
-        $sHtml = $sHtml . "<a class='alipaysubmit'></a></form>";
-        return $sHtml;
-    }
-
-    /**
      * 用于防钓鱼，调用接口query_timestamp来获取时间戳的处理函数
      * 注意：该功能PHP5环境及以上支持，因此必须服务器、本地电脑中装有支持DOMDocument、SSL的PHP配置环境。建议本地调试时使用PHP开发软件
      * return 时间戳字符串
@@ -146,14 +133,10 @@ class AlipaySubmit
     {
         $url = $this->alipay_gateway_new . "service=query_timestamp&partner=" . trim(strtolower($this->alipay_config['partner'])) . "&_input_charset=" . trim(strtolower($this->alipay_config['input_charset']));
         $encrypt_key = "";
-
         $doc = new \DOMDocument();
         $doc->load($url);
         $itemEncrypt_key = $doc->getElementsByTagName("encrypt_key");
         $encrypt_key = $itemEncrypt_key->item(0)->nodeValue;
-
         return $encrypt_key;
     }
 }
-
-?>

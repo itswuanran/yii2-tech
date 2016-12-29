@@ -38,7 +38,6 @@ return [
 
 ```
 
-
 ```bash
 php yii migrate
 
@@ -69,8 +68,6 @@ mysql -uusername -ppassword dbname < tech.sql
 ![后台管理](https://github.com/anruence/yii2-tech/raw/master/docs/backend.png
  "后台管理")
 
-
-
 ## 树形分类功能暂时只更新部分代码
 - 分类管理
 ![分类管理](https://github.com/anruence/yii2-tech/raw/master/docs/category.png
@@ -82,15 +79,32 @@ mysql -uusername -ppassword dbname < tech.sql
 ![audit](https://github.com/anruence/yii2-tech/raw/master/docs/audit.png
  "audit")
 
-## 支付系统正在开发中
-
-> 微信（支持多商户，APP & H5）
-
-> 支付宝（支持多商户，APP & H5）
-
 ## nginx配置
 
+建议配置多个二级域名
+
+
 ```
+# 支付端
+server {
+    listen       80;
+    server_name  pay.domain.app;
+    root  /data/yii2-tech/pay/web;
+    index index.php;
+    location / {
+        try_files $uri /index.php?$args;
+        # index index.php index.html;
+    }
+
+    location ~ \.php$ {
+        fastcgi_index  index.php;
+        fastcgi_pass unix:/var/run/php7.0-fpm.sock;
+        # fastcgi_pass 127.0.0.1:9000;
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+        include fastcgi_params;
+    }
+}
+# 博客端
 server {
     listen       80;
     server_name  tech.domain.app;
@@ -109,4 +123,49 @@ server {
         include fastcgi_params;
     }
 }
+# 后端mis
+server {
+    listen       80;
+    server_name  mis.domain.app;
+    root  /data/yii2-tech/backend/web;
+    index index.php;
+    location / {
+        try_files $uri /index.php?$args;
+        # index index.php index.html;
+    }
+
+    location ~ \.php$ {
+        fastcgi_index  index.php;
+        fastcgi_pass unix:/var/run/php7.0-fpm.sock;
+        # fastcgi_pass 127.0.0.1:9000;
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+        include fastcgi_params;
+    }
+}
+
+# 前端应用
+server {
+    listen       80;
+    server_name  www.domain.app;
+    root  /data/yii2-tech/frontend/web;
+    index index.php;
+    location / {
+        try_files $uri /index.php?$args;
+        # index index.php index.html;
+    }
+
+    location ~ \.php$ {
+        fastcgi_index  index.php;
+        fastcgi_pass unix:/var/run/php7.0-fpm.sock;
+        # fastcgi_pass 127.0.0.1:9000;
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+        include fastcgi_params;
+    }
+}
 ```
+
+## 支付系统正在开发中
+
+> 微信（支持多商户，APP & H5）
+
+> 支付宝（支持多商户，APP & H5）

@@ -70,7 +70,6 @@ return [
             ],
         ],
         'errorHandler' => [
-            'class' => 'common\handlers\ErrorHandler',
         ],
     ],
     'params' => $params,
