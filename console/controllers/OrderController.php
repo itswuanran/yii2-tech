@@ -9,7 +9,6 @@
 namespace console\controllers;
 
 use Yii;
-use common\models\Order;
 use yii\console\Controller;
 
 /**
