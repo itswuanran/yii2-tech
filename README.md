@@ -170,6 +170,16 @@ server {
 
 > 支付宝（支持多商户，APP & H5）
 
+## 增加seotools配置
+```
+php yii migrate --migrationPath=@vendor/jpunanua/yii2-seotools/migrations
+
+```
+### seotools路由
+- seotools/manage
+- seotools/manage/create
+
+
 ## 备注
 
  本项目东西会很多很杂，主要是Yii2常见组件的使用积累，仅供学习参考。

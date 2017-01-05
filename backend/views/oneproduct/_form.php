@@ -1,12 +1,13 @@
 <?php
 
-use yii\helpers\Html;
-use yii\widgets\ActiveForm;
-use kartik\widgets\Select2;
-use kartik\widgets\DepDrop;
 use yii\helpers\Url;
-use common\models\Category;
+use yii\helpers\Html;
 use yii\helpers\ArrayHelper;
+use yii\widgets\ActiveForm;
+use common\models\Category;
+use kartik\widgets\DepDrop;
+use kartik\widgets\Select2;
+use dosamigos\ckeditor\CKEditor;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\Oneproduct */
@@ -73,7 +74,10 @@ use yii\helpers\ArrayHelper;
         ]
     ])->label('三级分类'); ?>
 
-    <?= $form->field($model, 'details')->textInput() ?>
+    <?= $form->field($model, 'details')->widget(CKEditor::className(), [
+        'options' => ['rows' => 6],
+        'preset' => 'basic'
+    ]) ?>
 
     <?= $form->field($model, 'price')->textInput(['maxlength' => true]) ?>
 
