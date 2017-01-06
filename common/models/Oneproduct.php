@@ -115,6 +115,7 @@ class Oneproduct extends \yii\db\ActiveRecord
 
     public function behaviors()
     {
+        $active = Yii::$app instanceof \yii\console\Application ? false : true;
         return [
             [
                 'class' => TimestampBehavior::className(),
@@ -122,6 +123,10 @@ class Oneproduct extends \yii\db\ActiveRecord
                     ActiveRecord::EVENT_BEFORE_INSERT => ['addtime', 'modtime'],
                     ActiveRecord::EVENT_BEFORE_UPDATE => ['modtime'],
                 ],
+            ],
+            [
+                'class' => 'bedezign\yii2\audit\AuditTrailBehavior',
+                'active' => $active,
             ],
         ];
     }
