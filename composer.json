@@ -32,7 +32,7 @@
         "kartik-v/yii2-widgets": "*",
         "mdmsoft/yii2-admin": "~2.0",
         "johnitvn/yii2-ajaxcrud": "*",
-        "bedezign/yii2-audit": "*",
+        "bedezign/yii2-audit": "dev-master",
         "jpunanua/yii2-seotools": "*",
         "dmstr/yii2-adminlte-asset": "2.*",
         "nezhelskoy/yii2-highlight": "*",
