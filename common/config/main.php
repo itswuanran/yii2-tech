@@ -1,6 +1,9 @@
 <?php
 return [
     'vendorPath' => dirname(dirname(__DIR__)) . '/vendor',
+    'bootstrap' => [
+        'common\bootstrap\RequestBootstrap',
+    ],
     'components' => [
         'cache' => [
             'class' => 'yii\caching\FileCache',
