@@ -18,11 +18,11 @@ return [
             'accessRoles' => null,
             'db' => 'db',
             'maxAge' => 30, // 30 days
-//            'panels' => [
-//                'audit/log' => [
-//                    'maxAge' => 7, // 7 days
-//                ],
-//            ],
+            'panels' => [
+                'audit/log' => [
+                    'maxAge' => 7, // 7 days
+                ],
+            ],
         ],
         'admin' => [
             'class' => 'mdm\admin\Module',
