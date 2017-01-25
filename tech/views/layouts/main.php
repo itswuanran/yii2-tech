@@ -19,7 +19,7 @@ AppAsset::register($this);
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="application-name" content="安然写字的地方">
+    <meta name="application-name" content="Yii2技术博客">
     <meta name="description" content="专注于提供Yii2框架的技术文章,提供PHP技术问题的解决方案">
     <meta name="keywords" content="PHP,博客,技术博客,Yii,Yii2,Yii技术博客">
     <?= Html::csrfMetaTags() ?>

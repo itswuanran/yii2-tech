@@ -41,7 +41,8 @@
         "wbraganca/yii2-fancytree-widget": "*",
         "nullref/yii2-useful": "dev-master",
         "anruence/yii2-editor.md": "dev-master",
-        "devgroup/yii2-tag-dependency-helper": "*"
+        "devgroup/yii2-tag-dependency-helper": "*",
+        "philippfrenzel/yii2fullcalendar":"*"
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "*",
