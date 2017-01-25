@@ -78,10 +78,10 @@ mysql -uusername -ppassword dbname < tech.sql
 - audit访问记录
 ![audit](https://github.com/anruence/yii2-tech/raw/master/docs/audit.png
  "audit")
-![trails](https://github.com/anruence/yii2-tech/raw/master/docs/audit.png
+![trails](https://github.com/anruence/yii2-tech/raw/master/docs/trails.png
  "trails")
 - calendar展示
-![calendar](https://github.com/anruence/yii2-tech/raw/master/docs/trails.png
+![calendar](https://github.com/anruence/yii2-tech/raw/master/docs/calendar.png
  "calendar")
 
 ## nginx配置
