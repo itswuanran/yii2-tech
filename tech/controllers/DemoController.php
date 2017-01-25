@@ -41,6 +41,7 @@ class DemoController extends Controller
         $event->id = 1;
         $event->title = 'Testing the calendar title';
         $event->start = date('Y-m-d\TH:i:s\Z');
+        $event->description = 'desc';
         $event->textColor = 'red';
         $events[] = $event;
         return $this->render('calendar', ['events' => $events]);
