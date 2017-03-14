@@ -20,7 +20,7 @@ class BlogController extends Controller
                 'class' => AccessControl::className(),
                 'rules' => [
                     [
-                        'actions' => ['index', 'create', 'view', 'update'],
+                        'actions' => ['index', 'create', 'view', 'update', 'upload'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
@@ -82,6 +82,15 @@ class BlogController extends Controller
     {
         // $this->findModel($id)->delete();
         return $this->redirect(['index']);
+    }
+
+    /**
+     * 返回格式参见
+     */
+    public function actionUpload()
+    {
+        Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+        //TODO FileUpload
     }
 
     protected function findModel($id)
