@@ -16,6 +16,27 @@ use yii\console\Controller;
  */
 class OrderController extends Controller
 {
+    /**
+     * 批处理脚本的实现
+     * 一次取1000
+     */
+    public function actionBatch()
+    {
+        $starttime = time();
+        $endtime = time();
+        $max = Order::find()->where(['between', 'paytime', $starttime, $endtime])->max('id');
+        $min = Order::find()->where(['between', 'paytime', $starttime, $endtime])->min('id');
+        for ($id = $min; $id <= $max + 1000; $id += 1000) {
+            $orders = Order::find()
+                ->where(['between', 'paytime', $starttime, $endtime])
+                ->andWhere(["between", "id", $id, $id + 999])
+                ->all();
+            foreach ($orders as $order) {
+                // do anything you want
+                echo $order->id;
+            }
+        }
+    }
 
     public function actionMillion()
     {

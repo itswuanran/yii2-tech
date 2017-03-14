@@ -38,7 +38,7 @@ use anruence\editormd\EditorMd;
                 'imageUpload' => true,
                 'imageFormats' => ['jpg', 'jpeg', 'gif', 'png', 'bmp', 'webp'],
                 //TODO 图片上传地址
-                'imageUploadURL' => '/file/blog-upload?type=default&filekey=editormd-image-file',
+                'imageUploadURL' => '/blog/upload',
             ]
         ]
     ) ?>
