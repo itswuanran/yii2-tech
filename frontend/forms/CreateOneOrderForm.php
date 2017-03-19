@@ -3,10 +3,10 @@ namespace frontend\forms;
 
 use Yii;
 use yii\base\Model;
-use common\models\Oneorder;
-use common\models\Oneproterm;
-use common\models\Onelottery;
-use common\models\Oneproduct;
+use common\models\Order;
+use common\models\Proterm;
+use common\models\Lottery;
+use common\models\Product;
 
 /**
  * 一元夺宝下单
@@ -14,7 +14,7 @@ use common\models\Oneproduct;
 class CreateOneOrderForm extends Model
 {
     public $totalfee;
-    public $oneproductid;
+    public $productid;
     public $quantity;
     public $term;
     private $user;
@@ -22,16 +22,16 @@ class CreateOneOrderForm extends Model
     public function rules()
     {
         return [
-            [['oneproductid'], 'checkUser'],
-            [['oneproductid'], 'checkOneproduct'],
-            [['oneproductid'], 'checkTotalfee'],
+            [['productid'], 'checkUser'],
+            [['productid'], 'checkProduct'],
+            [['productid'], 'checkTotalfee'],
         ];
     }
 
     public function load($postArr, $formName = null)
     {
         // yii2 inlinevalidator do not validate when param is null or "" or []
-        $this->oneproductid = empty($postArr['oneproductid']) ? 0 : $postArr['oneproductid'];
+        $this->productid = empty($postArr['productid']) ? 0 : $postArr['productid'];
         $this->quantity = empty($postArr['quantity']) ? 0 : $postArr['quantity'];
         $this->term = empty($postArr['term']) ? 0 : $postArr['term'];
     }
@@ -44,7 +44,7 @@ class CreateOneOrderForm extends Model
         return [
             'id' => 'ID',
             'userid' => '用户',
-            'oneproductid' => '商品id',
+            'productid' => '商品id',
             'term' => '商品期数',
             'totalfee' => '待支付金额',
             'payed' => '实际支付金额',
@@ -62,27 +62,27 @@ class CreateOneOrderForm extends Model
         $this->user = Yii::$app->user->identity;
     }
 
-    public function checkOneproduct($attribute, $params)
+    public function checkProduct($attribute, $params)
     {
         if ($this->hasErrors()) {
             return;
         }
-        $oneproduct = Oneproduct::getInstance($this->oneproductid);
-        if (!$oneproduct) {
+        $product = Product::getInstance($this->productid);
+        if (!$product) {
             return $this->addError($attribute, '商品不存在');
         }
 
-        $oneproterm = Oneproterm::getOneproterm($this->oneproductid, $this->term);
-        if (!$oneproterm) {
+        $proterm = Proterm::getProterm($this->productid, $this->term);
+        if (!$proterm) {
             return $this->addError($attribute, '当前期商品不存在');
         }
-        if ($oneproterm->status != Oneproterm::STATUS_ONLINE) {
+        if ($proterm->status != Proterm::STATUS_ONLINE) {
 //            return $this->addError($attribute, '第' . $this->term . '期商品活动已结束');
         }
-        if ($this->quantity > Onelottery::getUsedNum($this->oneproductid, $this->term)) {
+        if ($this->quantity > Lottery::getUsedNum($this->productid, $this->term)) {
             return $this->addError($attribute, '商品数量不足');
         }
-        $this->totalfee = (floatval($this->quantity * $oneproduct->price));
+        $this->totalfee = (floatval($this->quantity * $product->price));
     }
 
     public function checkTotalfee($attribute, $params)
@@ -102,26 +102,26 @@ class CreateOneOrderForm extends Model
 
     public function order()
     {
-        $transaction = Oneorder::getDb()->beginTransaction();
-        // 创建oneorder
-        $order = $this->createOneorder();
+        $transaction = Order::getDb()->beginTransaction();
+        // 创建order
+        $order = $this->createOrder();
         $transaction->commit();
         return $order;
     }
 
-    private function createOneorder()
+    private function createOrder()
     {
-        // 创建oneorder
-        $oneorder = new Oneorder();
-        $oneorder->userid = $this->user->id;
-        $oneorder->oneproductid = $this->oneproductid;
-        $oneorder->quantity = $this->quantity;
-        $oneorder->term = $this->term;
-        $oneorder->totalfee = $this->totalfee;
-        $oneorder->payed = $this->totalfee;
-        $oneorder->ordertime = time();
-        $oneorder->orderip = Yii::$app->request instanceof \yii\web\Request ? ip2long(Yii::$app->request->userIP) : 0;
-        $oneorder->save(false);
-        return $oneorder;
+        // 创建order
+        $order = new Order();
+        $order->userid = $this->user->id;
+        $order->productid = $this->productid;
+        $order->quantity = $this->quantity;
+        $order->term = $this->term;
+        $order->totalfee = $this->totalfee;
+        $order->payed = $this->totalfee;
+        $order->ordertime = time();
+        $order->orderip = Yii::$app->request instanceof \yii\web\Request ? ip2long(Yii::$app->request->userIP) : 0;
+        $order->save(false);
+        return $order;
     }
 }

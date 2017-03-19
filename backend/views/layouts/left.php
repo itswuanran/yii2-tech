@@ -41,9 +41,9 @@
                         'icon' => 'fa fa-circle-o',
                         'url' => '#',
                         'items' => [
-                            ['label' => '商品管理', 'icon' => 'fa fa-circle-o', 'url' => '/oneproduct',],
-                            ['label' => '期数管理', 'icon' => 'fa fa-circle-o', 'url' => '/oneproterm',],
-                            ['label' => '抽奖管理', 'icon' => 'fa fa-circle-o', 'url' => '/onelottery',],
+                            ['label' => '商品管理', 'icon' => 'fa fa-circle-o', 'url' => '/product',],
+                            ['label' => '期数管理', 'icon' => 'fa fa-circle-o', 'url' => '/proterm',],
+                            ['label' => '抽奖管理', 'icon' => 'fa fa-circle-o', 'url' => '/lottery',],
                         ],
                     ],
                     [

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "d51248abdd92b4c28ef7c3772134314d",
+    "content-hash": "f5fa8dd7b9784ce38adf57f941560e30",
     "packages": [
         {
             "name": "2amigos/yii2-chartjs-widget",
@@ -225,12 +225,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/bedezign/yii2-audit.git",
-                "reference": "1cfa178dc6d9476cb3296ef704df2f7b6d4cb2fd"
+                "reference": "0cf5802afa52cfff90efb06b8795fe25eb74c931"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://packagist.phpcomposer.com/files/bedezign/yii2-audit/1cfa178dc6d9476cb3296ef704df2f7b6d4cb2fd.zip",
-                "reference": "1cfa178dc6d9476cb3296ef704df2f7b6d4cb2fd",
+                "url": "https://files.phpcomposer.com/files/bedezign/yii2-audit/0cf5802afa52cfff90efb06b8795fe25eb74c931.zip",
+                "reference": "0cf5802afa52cfff90efb06b8795fe25eb74c931",
                 "shasum": ""
             },
             "require": {
@@ -278,7 +278,7 @@
                 "trail",
                 "yii2"
             ],
-            "time": "2017-01-17 01:03:10"
+            "time": "2017-02-17 13:26:29"
         },
         {
             "name": "bower-asset/bootstrap",
@@ -1196,16 +1196,16 @@
         },
         {
             "name": "ezyang/htmlpurifier",
-            "version": "v4.9.0",
+            "version": "v4.9.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ezyang/htmlpurifier.git",
-                "reference": "a1c09b09e398687deeb8e309a6305def4b43439b"
+                "reference": "6d50e5282afdfdfc3e0ff6d192aff56c5629b3d4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://packagist.phpcomposer.com/files/ezyang/htmlpurifier/a1c09b09e398687deeb8e309a6305def4b43439b.zip",
-                "reference": "a1c09b09e398687deeb8e309a6305def4b43439b",
+                "url": "https://files.phpcomposer.com/files/ezyang/htmlpurifier/6d50e5282afdfdfc3e0ff6d192aff56c5629b3d4.zip",
+                "reference": "6d50e5282afdfdfc3e0ff6d192aff56c5629b3d4",
                 "shasum": ""
             },
             "require": {
@@ -1239,7 +1239,7 @@
             "keywords": [
                 "html"
             ],
-            "time": "2017-01-13T12:31:37+00:00"
+            "time": "2017-03-13T06:30:53+00:00"
         },
         {
             "name": "filsh/yii2-oauth2-server",
@@ -1443,16 +1443,16 @@
         },
         {
             "name": "kartik-v/bootstrap-fileinput",
-            "version": "v4.3.6",
+            "version": "v4.3.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kartik-v/bootstrap-fileinput.git",
-                "reference": "ad0ddced480efdd38051d02b1ef28a2749bcc48a"
+                "reference": "219447a8c21b1c82e534dc2e6a73386933fc9c5e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://packagist.phpcomposer.com/files/kartik-v/bootstrap-fileinput/ad0ddced480efdd38051d02b1ef28a2749bcc48a.zip",
-                "reference": "ad0ddced480efdd38051d02b1ef28a2749bcc48a",
+                "url": "https://files.phpcomposer.com/files/kartik-v/bootstrap-fileinput/219447a8c21b1c82e534dc2e6a73386933fc9c5e.zip",
+                "reference": "219447a8c21b1c82e534dc2e6a73386933fc9c5e",
                 "shasum": ""
             },
             "type": "library",
@@ -1492,7 +1492,7 @@
                 "progress",
                 "upload"
             ],
-            "time": "2016-12-17T16:49:33+00:00"
+            "time": "2017-02-21T06:45:16+00:00"
         },
         {
             "name": "kartik-v/bootstrap-popover-x",
@@ -1786,16 +1786,16 @@
         },
         {
             "name": "kartik-v/yii2-krajee-base",
-            "version": "v1.8.7",
+            "version": "v1.8.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kartik-v/yii2-krajee-base.git",
-                "reference": "8f558809e6093c8f4f4599b7b9fd64b366b22a60"
+                "reference": "2479241c03c87995cfc528ae7b297f5ae9e733cb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kartik-v/yii2-krajee-base/zipball/8f558809e6093c8f4f4599b7b9fd64b366b22a60",
-                "reference": "8f558809e6093c8f4f4599b7b9fd64b366b22a60",
+                "url": "https://files.phpcomposer.com/files/kartik-v/yii2-krajee-base/2479241c03c87995cfc528ae7b297f5ae9e733cb.zip",
+                "reference": "2479241c03c87995cfc528ae7b297f5ae9e733cb",
                 "shasum": ""
             },
             "require": {
@@ -1833,7 +1833,7 @@
                 "widget",
                 "yii2"
             ],
-            "time": "2016-09-04T09:25:29+00:00"
+            "time": "2017-02-22T05:58:53+00:00"
         },
         {
             "name": "kartik-v/yii2-markdown",
@@ -3269,16 +3269,16 @@
         },
         {
             "name": "nezhelskoy/yii2-highlight",
-            "version": "v1.2.7",
+            "version": "v1.2.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nezhelskoy/yii2-highlight.git",
-                "reference": "a2d09ca92878ee6b2172eda622e8dba5726cd935"
+                "reference": "e5a6653f53e1d0105261c3ed6f4ee22662ba34a8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nezhelskoy/yii2-highlight/zipball/a2d09ca92878ee6b2172eda622e8dba5726cd935",
-                "reference": "a2d09ca92878ee6b2172eda622e8dba5726cd935",
+                "url": "https://files.phpcomposer.com/files/nezhelskoy/yii2-highlight/e5a6653f53e1d0105261c3ed6f4ee22662ba34a8.zip",
+                "reference": "e5a6653f53e1d0105261c3ed6f4ee22662ba34a8",
                 "shasum": ""
             },
             "require": {
@@ -3314,7 +3314,7 @@
                 "highlight.js",
                 "yii2"
             ],
-            "time": "2016-09-05T18:30:31+00:00"
+            "time": "2017-03-08T13:50:49+00:00"
         },
         {
             "name": "nikic/php-parser",
@@ -3784,16 +3784,16 @@
         },
         {
             "name": "swiftmailer/swiftmailer",
-            "version": "v5.4.5",
+            "version": "v5.4.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/swiftmailer/swiftmailer.git",
-                "reference": "cd142238a339459b10da3d8234220963f392540c"
+                "reference": "81fdccfaf8bdc5d5d7a1ef6bb3a61bbb1a6c4a3e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://packagist.phpcomposer.com/files/swiftmailer/swiftmailer/cd142238a339459b10da3d8234220963f392540c.zip",
-                "reference": "cd142238a339459b10da3d8234220963f392540c",
+                "url": "https://files.phpcomposer.com/files/swiftmailer/swiftmailer/81fdccfaf8bdc5d5d7a1ef6bb3a61bbb1a6c4a3e.zip",
+                "reference": "81fdccfaf8bdc5d5d7a1ef6bb3a61bbb1a6c4a3e",
                 "shasum": ""
             },
             "require": {
@@ -3834,7 +3834,7 @@
                 "mail",
                 "mailer"
             ],
-            "time": "2016-12-29T10:02:40+00:00"
+            "time": "2017-02-13T07:52:53+00:00"
         },
         {
             "name": "wbraganca/yii2-fancytree-widget",
@@ -4293,6 +4293,53 @@
                 "yii2"
             ],
             "time": "2016-03-18T14:09:46+00:00"
+        },
+        {
+            "name": "yiisoft/yii2-httpclient",
+            "version": "2.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/yiisoft/yii2-httpclient.git",
+                "reference": "113e4e361730f62c1bf50fbd6f09898776d404b1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://files.phpcomposer.com/files/yiisoft/yii2-httpclient/113e4e361730f62c1bf50fbd6f09898776d404b1.zip",
+                "reference": "113e4e361730f62c1bf50fbd6f09898776d404b1",
+                "shasum": ""
+            },
+            "require": {
+                "yiisoft/yii2": "~2.0.0"
+            },
+            "type": "yii2-extension",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "yii\\httpclient\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Paul Klimov",
+                    "email": "klimov.paul@gmail.com"
+                }
+            ],
+            "description": "HTTP client extension for the Yii framework",
+            "keywords": [
+                "curl",
+                "http",
+                "httpclient",
+                "yii2"
+            ],
+            "time": "2017-02-15T14:28:10+00:00"
         },
         {
             "name": "yiisoft/yii2-jui",
