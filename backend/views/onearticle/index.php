@@ -1,7 +1,7 @@
 <?php
 
 use yii\helpers\Html;
-use yii\grid\GridView;
+use kartik\grid\GridView;
 
 /* @var $this yii\web\View */
 /* @var $dataProvider yii\data\ActiveDataProvider */
@@ -19,19 +19,16 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
-
             'id',
             'title',
-            'image',
             'author',
             'author_it',
-            // 'guide_word',
-            // 'wb_img_url:url',
-            // 'content_id',
             // 'content:ntext',
-
+            // 'content_id',
+            'wb_img_url:url',
+            'guide_word',
             ['class' => 'yii\grid\ActionColumn'],
+
         ],
     ]); ?>
 </div>
