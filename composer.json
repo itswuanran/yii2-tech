@@ -21,14 +21,15 @@
     "prefer-stable": true,
     "require": {
         "php": ">=5.4.0",
-        "yiisoft/yii2": ">=2.0.10",
+        "yiisoft/yii2": "2.0.10",
         "yiisoft/yii2-bootstrap": "*",
         "yiisoft/yii2-swiftmailer": "*",
         "yiisoft/yii2-redis": "^2.0",
         "yiisoft/yii2-apidoc": "~2.1.0",
         "yiisoft/yii2-elasticsearch": "~2.0.0",
+        "yiisoft/yii2-httpclient": "~2.0.0",
         "kartik-v/yii2-grid": "@dev",
-        "kartik-v/yii2-markdown":"@dev",
+        "kartik-v/yii2-markdown": "@dev",
         "kartik-v/yii2-widgets": "*",
         "mdmsoft/yii2-admin": "~2.0",
         "johnitvn/yii2-ajaxcrud": "*",
@@ -42,7 +43,7 @@
         "nullref/yii2-useful": "dev-master",
         "anruence/yii2-editor.md": "dev-master",
         "devgroup/yii2-tag-dependency-helper": "*",
-        "philippfrenzel/yii2fullcalendar":"*"
+        "philippfrenzel/yii2fullcalendar": "*"
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "*",
