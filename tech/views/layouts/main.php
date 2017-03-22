@@ -81,7 +81,7 @@ AppAsset::register($this);
                 <?= Yii::powered() ?>
             </div>
             <div>
-                <strong>Copyright</strong> &copy; <?= date('Y') ?>
+                <strong>Copyright</strong> &copy; <?= date('Y') ?> 京ICP备17003694号
             </div>
         </div>
     </div>
