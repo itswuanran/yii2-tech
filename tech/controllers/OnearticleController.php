@@ -33,6 +33,19 @@ class OnearticleController extends Controller
         ]);
     }
 
+    public function actionSearch($q = '', $p = 1)
+    {
+        $onearticles = Onearticle::find()
+            ->where(['like', 'title', $q])
+            ->orWhere(['like', 'content', $q])
+            ->limit(100)
+            ->all();
+        return $this->render('search', [
+            'onearticles' => $onearticles,
+            'q' => $q,
+        ]);
+    }
+
     public function actionView($id)
     {
         if (!$onearticle = Onearticle::findOne($id)) {

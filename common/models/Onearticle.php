@@ -56,4 +56,10 @@ class Onearticle extends \yii\db\ActiveRecord
             'content' => 'Content',
         ];
     }
+
+    public function getShortUrl()
+    {
+        return "/onearticle/view?id=$this->id";
+    }
+
 }
