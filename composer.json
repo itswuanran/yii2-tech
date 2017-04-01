@@ -21,7 +21,7 @@
     "prefer-stable": true,
     "require": {
         "php": ">=5.4.0",
-        "yiisoft/yii2": "2.0.10",
+        "yiisoft/yii2": "2.0.*",
         "yiisoft/yii2-bootstrap": "*",
         "yiisoft/yii2-swiftmailer": "*",
         "yiisoft/yii2-redis": "^2.0",
@@ -43,13 +43,17 @@
         "nullref/yii2-useful": "dev-master",
         "anruence/yii2-editor.md": "dev-master",
         "devgroup/yii2-tag-dependency-helper": "*",
-        "philippfrenzel/yii2fullcalendar": "*"
+        "philippfrenzel/yii2fullcalendar": "*",
+        "symfony/dom-crawler": "*",
+        "symfony/css-selector": "*"
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "*",
         "yiisoft/yii2-debug": "*",
         "yiisoft/yii2-gii": "*",
-        "yiisoft/yii2-faker": "*"
+        "yiisoft/yii2-faker": "*",
+        "codeception/base": "^2.2.3",
+        "codeception/verify": "~0.3.1"
     },
     "config": {
         "process-timeout": 1800
