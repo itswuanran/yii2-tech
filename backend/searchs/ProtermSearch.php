@@ -18,7 +18,7 @@ class ProtermSearch extends Proterm
     public function rules()
     {
         return [
-            [['id', 'productid', 'term', 'num', 'begintime', 'endtime', 'addtime', 'modtime', 'status'], 'integer'],
+            [['id', 'term', 'num', 'begintime', 'endtime', 'addtime', 'modtime', 'status'], 'integer'],
             [['price'], 'number'],
             [['attr'], 'safe'],
         ];
@@ -58,7 +58,6 @@ class ProtermSearch extends Proterm
 
         $query->andFilterWhere([
             'id' => $this->id,
-            'productid' => $this->productid,
             'term' => $this->term,
             'price' => $this->price,
             'num' => $this->num,

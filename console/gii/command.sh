@@ -7,6 +7,7 @@ yes y | php yii gii/model --tableName="user" --modelClass="User" --db="db" --ns=
 yes y | php yii gii/model --tableName="comment" --modelClass="User" --db="db" --ns="common\models"
 yes y | php yii gii/model --tableName="onearticle" --modelClass="Onearticle" --db="db" --ns="common\models"
 yes y | php yii gii/crud --controllerClass='backend\controllers\OnearticleController' --modelClass='common\models\Onearticle' --viewPath='backend/views/onearticle'
+yes y | php yii gii/crud --controllerClass='backend\controllers\UserController' --modelClass='common\models\User' --viewPath='backend/views/user'
 
 find . -type d | xargs rename 's/Oneproterm/Proterm/';
 find . -type d | xargs rename 's/oneproterm/proterm/';

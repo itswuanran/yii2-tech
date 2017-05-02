@@ -13,11 +13,11 @@ return [
     ],
     [
         'class' => '\kartik\grid\DataColumn',
-        'attribute' => 'orderid',
+        'attribute' => 'oneorderid',
     ],
     [
         'class' => '\kartik\grid\DataColumn',
-        'attribute' => 'productid',
+        'attribute' => 'oneproductid',
     ],
     [
         'class' => '\kartik\grid\DataColumn',

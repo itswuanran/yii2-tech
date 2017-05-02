@@ -11,9 +11,9 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'orderid')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'oneorderid')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'productid')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'oneproductid')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'term')->textInput() ?>
 

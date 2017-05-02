@@ -38,12 +38,11 @@
                     ['label' => '分类管理', 'icon' => 'fa fa-th-list', 'url' => ['/category'],],
                     ['label' => '用户管理', 'icon' => 'fa fa-users', 'url' => ['/user'],],
                     [
-                        'label' => '一元夺宝',
+                        'label' => '一元活动',
                         'icon' => 'fa fa-circle-o',
                         'url' => '#',
                         'items' => [
                             ['label' => '商品管理', 'icon' => 'fa fa-circle-o', 'url' => '/product',],
-                            ['label' => '期数管理', 'icon' => 'fa fa-circle-o', 'url' => '/proterm',],
                             ['label' => '抽奖管理', 'icon' => 'fa fa-circle-o', 'url' => '/lottery',],
                         ],
                     ],

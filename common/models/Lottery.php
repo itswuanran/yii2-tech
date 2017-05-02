@@ -11,8 +11,8 @@ use common\traits\AttrTrait;
  * 该model对应数据库表 "lottery".
  *
  * @property integer $id
- * @property string $orderid 订单ID
- * @property string $productid 商品ID
+ * @property string $oneorderid 订单ID
+ * @property string $oneproductid 商品ID
  * @property integer $term 商品期数
  * @property string $userid 用户id
  * @property string $lotteryno 中奖号码
@@ -47,7 +47,7 @@ class Lottery extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['orderid', 'productid', 'term', 'userid', 'status', 'isused', 'islucky', 'addtime', 'modtime'], 'integer'],
+            [['oneorderid', 'oneproductid', 'term', 'userid', 'status', 'isused', 'islucky', 'addtime', 'modtime'], 'integer'],
             [['lotteryno'], 'string', 'max' => 50],
             [['attr'], 'string', 'max' => 1024]
         ];
@@ -60,8 +60,8 @@ class Lottery extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'orderid' => '订单ID',
-            'productid' => '商品ID',
+            'oneorderid' => '订单ID',
+            'oneproductid' => '商品ID',
             'term' => '商品期数',
             'userid' => '用户id',
             'lotteryno' => '中奖号码',
@@ -78,11 +78,11 @@ class Lottery extends \yii\db\ActiveRecord
     {
         return [
             'id' => $this->id,
-            'productid' => $this->productid,
-            'orderid' => $this->orderid,
+            'oneproductid' => $this->oneproductid,
+            'oneorderid' => $this->oneorderid,
             'term' => $this->term,
             'protermstatus' => $this->proterm->status,
-            'joinednum' => self::getUsedNum($this->productid, $this->term),
+            'joinednum' => self::getUsedNum($this->oneproductid, $this->term),
             'userid' => $this->userid,
             'username' => $this->user ? $this->user->name : '',
             'mobile' => $this->user ? $this->user->mobile : '',
@@ -103,44 +103,44 @@ class Lottery extends \yii\db\ActiveRecord
 
     }
 
-    public static function getUsedNum($productid, $term)
+    public static function getUsedNum($oneproductid, $term)
     {
         return self::find()
-            ->where(['productid' => $productid, 'term' => $term, 'isused' => self::IS_USED_TRUE])
+            ->where(['oneproductid' => $oneproductid, 'term' => $term, 'isused' => self::IS_USED_TRUE])
             ->count();
     }
 
-    public static function getUnusedNum($productid, $term)
+    public static function getUnusedNum($oneproductid, $term)
     {
         return self::find()
-            ->where(['productid' => $productid, 'term' => $term, 'isused' => self::IS_USED_FALSE])
+            ->where(['oneproductid' => $oneproductid, 'term' => $term, 'isused' => self::IS_USED_FALSE])
             ->count();
     }
 
-    public static function getUnusedLotterys($productid, $term, $limit = 1000)
+    public static function getUnusedLotterys($oneproductid, $term, $limit = 1000)
     {
         return self::find()
-            ->where(['productid' => $productid, 'term' => $term, 'isused' => self::IS_USED_FALSE])
+            ->where(['oneproductid' => $oneproductid, 'term' => $term, 'isused' => self::IS_USED_FALSE])
             ->limit($limit)
             ->all();
     }
 
 
-    public static function getLuckyNum($productid, $term)
+    public static function getLuckyNum($oneproductid, $term)
     {
         return self::find()
-            ->where(['productid' => $productid, 'term' => $term, 'islucky' => self::IS_LUCKY_TRUE])
+            ->where(['oneproductid' => $oneproductid, 'term' => $term, 'islucky' => self::IS_LUCKY_TRUE])
             ->count();
     }
 
-    public static function isLotteryGenerated($productid, $term)
+    public static function isLotteryGenerated($oneproductid, $term)
     {
-        return Lottery::find()->where(['productid' => $productid, 'term' => $term])->exists();
+        return Lottery::find()->where(['oneproductid' => $oneproductid, 'term' => $term])->exists();
     }
 
-    public static function isLotteryAllUsed($productid, $term)
+    public static function isLotteryAllUsed($oneproductid, $term)
     {
-        return !Lottery::find()->where(['productid' => $productid, 'term' => $term, 'isused' => Lottery::IS_USED_FALSE])->exists();
+        return !Lottery::find()->where(['oneproductid' => $oneproductid, 'term' => $term, 'isused' => Lottery::IS_USED_FALSE])->exists();
     }
 
     public function getUser()
@@ -150,17 +150,17 @@ class Lottery extends \yii\db\ActiveRecord
 
     public function getProduct()
     {
-        return $this->hasOne(Product::className(), ['id' => 'productid']);
+        return $this->hasOne(Product::className(), ['id' => 'oneproductid']);
     }
 
     public function getOrder()
     {
-        return $this->hasOne(Order::className(), ['id' => 'orderid']);
+        return $this->hasOne(Order::className(), ['id' => 'oneorderid']);
     }
 
     public function getProterm()
     {
-        return $this->hasOne(Proterm::className(), ['id' => 'productid'])->onCondition(['term' => $this->term]);
+        return $this->hasOne(Proterm::className(), ['id' => 'oneproductid'])->onCondition(['term' => $this->term]);
     }
 
     public function behaviors()

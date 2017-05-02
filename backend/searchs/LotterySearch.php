@@ -18,7 +18,7 @@ class LotterySearch extends Lottery
     public function rules()
     {
         return [
-            [['id', 'orderid', 'productid', 'term', 'userid', 'status', 'isused', 'islucky', 'addtime', 'modtime'], 'integer'],
+            [['id', 'oneorderid', 'oneproductid', 'term', 'userid', 'status', 'isused', 'islucky', 'addtime', 'modtime'], 'integer'],
             [['lotteryno', 'attr'], 'safe'],
         ];
     }
@@ -57,8 +57,8 @@ class LotterySearch extends Lottery
 
         $query->andFilterWhere([
             'id' => $this->id,
-            'orderid' => $this->orderid,
-            'productid' => $this->productid,
+            'oneorderid' => $this->oneorderid,
+            'oneproductid' => $this->oneproductid,
             'term' => $this->term,
             'userid' => $this->userid,
             'status' => $this->status,

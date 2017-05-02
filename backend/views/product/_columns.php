@@ -69,31 +69,6 @@ return [
                     'data-toggle' => 'tooltip'
                 ]);
             },
-            'online' => function ($url, $model, $key) {
-                if ($model->status == Product::STATUS_ONLINE) {
-                    return Html::a("下线", ["offline", "id" => $model->id], [
-                        'class' => 'btn btn-danger',
-                        'role' => 'modal-remote',
-                        'data-toggle' => 'tooltip',
-                        'data-confirm' => false,
-                        'data-method' => false,// for overide yii data api
-                        'data-request-method' => 'post',
-                        'data-confirm-title' => '温馨提示',
-                        'data-confirm-message' => '你确定要下线么？(下线后商品不再售卖)'
-                    ]);
-                } else {
-                    return Html::a("上线", ["online", "id" => $model->id], [
-                        'class' => 'btn btn-success',
-                        'role' => 'modal-remote',
-                        'data-toggle' => 'tooltip',
-                        'data-confirm' => false,
-                        'data-method' => false,// for overide yii data api
-                        'data-request-method' => 'post',
-                        'data-confirm-title' => '温馨提示',
-                        'data-confirm-message' => '你确定要上线么？(上线时会生成当前期抽奖券)'
-                    ]);
-                }
-            },
         ],
     ],
 
