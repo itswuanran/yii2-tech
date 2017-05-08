@@ -1,6 +1,6 @@
 <?php
 
-$this->title = '安然写字的地方';
+$this->title = '归来仍是少年';
 $this->params['breadcrumbs'][] = $this->title;
 nezhelskoy\highlight\HighlightAsset::register($this);
 ?>

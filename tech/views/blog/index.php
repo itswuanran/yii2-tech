@@ -1,6 +1,6 @@
 <?php
 
-$this->title = '安然写字的地方';
+$this->title = '屠龙的勇士';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 
