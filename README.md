@@ -13,6 +13,7 @@ composer install --no-dev
 ## 数据库迁移
  
  - tech.sql中保存了sql语句，暂时没写migrate脚本。后续会扩展。
+ - 后台 用户名：test 密码：testpass
 
 修改测试环境的common/config/main-local.php文件
 
