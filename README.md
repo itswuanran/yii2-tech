@@ -12,6 +12,7 @@ composer install --no-dev
 
 ## 数据库迁移
  
+ - 先解压tech.sql.zip文件。
  - tech.sql中保存了sql语句，暂时没写migrate脚本。后续会扩展。
  - 后台 用户名：test 密码：testpass
 
@@ -59,23 +60,23 @@ php yii migrate --migrationPath=@bedezign/yii2/audit/migrations
 ```bash
 mysql -uusername -ppassword dbname < tech.sql
 ```
+
+
+
 ## 效果图
 
 - 前端页面
 ![前端页面](https://github.com/anruence/yii2-tech/raw/master/docs/tech.png
  "前端页面")
-
 - 后台管理
 ![后台管理](https://github.com/anruence/yii2-tech/raw/master/docs/backend.png
  "后台管理")
-
-## 树形分类功能暂时只更新部分代码
-- 分类管理
-![分类管理](https://github.com/anruence/yii2-tech/raw/master/docs/category.png
- "分类管理")
-- 商品管理(详情页待集成ckeditor)
+- 商品管理(详情页集成ckeditor)
 ![商品管理](https://github.com/anruence/yii2-tech/raw/master/docs/oneproduct.png
  "商品管理")
+- 树形分类
+![树形分类](https://github.com/anruence/yii2-tech/raw/master/docs/category.png
+ "树形分类")
 - audit访问记录
 ![audit](https://github.com/anruence/yii2-tech/raw/master/docs/audit.png
  "audit")
@@ -88,7 +89,6 @@ mysql -uusername -ppassword dbname < tech.sql
 ## nginx配置
 
 建议配置多个二级域名
-
 
 ```
 # 支付端
@@ -170,7 +170,13 @@ server {
 }
 ```
 
-## 支付系统正在开发中
+## elasticsearch接入（TODO）
+
+## oauth2.0配置（TODO）
+
+## sso系统（TODO）
+
+## 支付系统
 
 > 微信（支持多商户，APP & H5）
 
@@ -188,4 +194,4 @@ php yii migrate --migrationPath=@vendor/jpunanua/yii2-seotools/migrations
 
 ## 备注
 
- 本项目东西会很多很杂，主要是Yii2常见组件的使用积累，仅供学习参考。
+ 本项目主要是Yii2常见组件的使用积累，仅供学习参考，如需线上应用请folk然后自由定制自己所需功能。
