@@ -16,7 +16,7 @@ return [
             'csrfParam' => '_csrf-frontend',
         ],
         'user' => [
-            'identityClass' => 'common\models\User',
+            'identityClass' => 'frontend\models\User',
             'enableAutoLogin' => true,
             'identityCookie' => ['name' => '_identity-frontend', 'httpOnly' => true],
         ],
@@ -36,14 +36,38 @@ return [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
-        /*
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+                'POST oauth2/<action:\w+>' => 'oauth2/default/<action>',
             ],
         ],
-        */
+
     ],
+    'modules' => [
+        'oauth2' => [
+            'class' => 'filsh\yii2\oauth2server\Module',
+            'tokenParamName' => 'accessToken',
+            'tokenAccessLifetime' => 3600 * 24,
+            'storageMap' => [
+                'user_credentials' => 'frontend\models\User'
+            ],
+            'grantTypes' => [
+                'client_credentials' => [
+                    'class' => 'OAuth2\GrantType\ClientCredentials',
+                    'allow_public_clients' => false
+                ],
+                'user_credentials' => [
+                    'class' => 'OAuth2\GrantType\UserCredentials'
+                ],
+                'refresh_token' => [
+                    'class' => 'OAuth2\GrantType\RefreshToken',
+                    'always_issue_new_refresh_token' => true
+                ]
+            ],
+        ],
+    ],
+
     'params' => $params,
 ];

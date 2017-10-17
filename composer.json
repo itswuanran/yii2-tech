@@ -37,7 +37,7 @@
         "jpunanua/yii2-seotools": "*",
         "dmstr/yii2-adminlte-asset": "2.*",
         "nezhelskoy/yii2-highlight": "*",
-        "filsh/yii2-oauth2-server": "~2.0",
+        "filsh/yii2-oauth2-server": "*",
         "2amigos/yii2-ckeditor-widget": "*",
         "wbraganca/yii2-fancytree-widget": "*",
         "nullref/yii2-useful": "dev-master",

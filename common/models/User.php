@@ -2,6 +2,7 @@
 
 namespace common\models;
 
+use OAuth2\Storage\UserCredentialsInterface;
 use Yii;
 use yii\base\NotSupportedException;
 use yii\behaviors\TimestampBehavior;

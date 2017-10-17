@@ -172,7 +172,33 @@ server {
 
 ## elasticsearch接入（TODO）
 
-## oauth2.0配置（TODO）
+## OAuth2.0配置
+添加oauth2.0的配置文件
+```
+    'modules' => [
+        'oauth2' => [
+            'class' => 'filsh\yii2\oauth2server\Module',
+            'tokenParamName' => 'accessToken',
+            'tokenAccessLifetime' => 3600 * 24,
+            'storageMap' => [
+                'user_credentials' => 'frontend\models\User'
+            ],
+            'grantTypes' => [
+                'client_credentials' => [
+                    'class' => 'OAuth2\GrantType\ClientCredentials',
+                    'allow_public_clients' => false
+                ],
+                'user_credentials' => [
+                    'class' => 'OAuth2\GrantType\UserCredentials'
+                ],
+                'refresh_token' => [
+                    'class' => 'OAuth2\GrantType\RefreshToken',
+                    'always_issue_new_refresh_token' => true
+                ]
+            ],
+        ],
+    ],
+```
 
 ## sso系统（TODO）
 
