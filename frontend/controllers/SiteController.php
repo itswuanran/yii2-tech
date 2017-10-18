@@ -25,31 +25,30 @@ class SiteController extends BaseController
      */
     public function behaviors()
     {
-        return
-            ArrayHelper::merge(parent::behaviors(), [
-                'access' => [
-                    'class' => AccessControl::className(),
-                    'only' => ['logout', 'signup'],
-                    'rules' => [
-                        [
-                            'actions' => ['signup'],
-                            'allow' => true,
-                            'roles' => ['?'],
-                        ],
-                        [
-                            'actions' => ['logout'],
-                            'allow' => true,
-                            'roles' => ['@'],
-                        ],
+        return ArrayHelper::merge(parent::behaviors(), [
+            'access' => [
+                'class' => AccessControl::className(),
+                'only' => ['logout', 'signup'],
+                'rules' => [
+                    [
+                        'actions' => ['signup'],
+                        'allow' => true,
+                        'roles' => ['?'],
+                    ],
+                    [
+                        'actions' => ['logout'],
+                        'allow' => true,
+                        'roles' => ['@'],
                     ],
                 ],
-                'verbs' => [
-                    'class' => VerbFilter::className(),
-                    'actions' => [
-                        'logout' => ['post'],
-                    ],
+            ],
+            'verbs' => [
+                'class' => VerbFilter::className(),
+                'actions' => [
+                    'logout' => ['post'],
                 ],
-            ]);
+            ],
+        ]);
     }
 
     /**

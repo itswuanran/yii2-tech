@@ -40,7 +40,7 @@ return [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
-                'POST oauth2/<action:\w+>' => 'oauth2/default/<action>',
+//                'POST oauth2/<action:\w+>' => 'oauth2/rest/<action>',
             ],
         ],
 

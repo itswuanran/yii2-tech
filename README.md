@@ -173,8 +173,10 @@ server {
 ## elasticsearch接入（TODO）
 
 ## OAuth2.0配置
-添加oauth2.0的配置文件
-```
+
+### 添加oauth2.0的配置文件
+
+```php
     'modules' => [
         'oauth2' => [
             'class' => 'filsh\yii2\oauth2server\Module',
@@ -198,6 +200,46 @@ server {
             ],
         ],
     ],
+    'components' => [
+        'urlManager' => [
+            'enablePrettyUrl' => true,
+            'showScriptName' => false,
+            'rules' => [
+                'POST oauth2/<action:\w+>' => 'oauth2/rest/<action>',
+            ],
+        ],
+    ]
+```
+### 创建Oauth Server所需数据表
+```
+php yii migrate --migrationPath=@vendor/filsh/yii2-oauth2-server/migrations
+```
+原作者的migrate脚本有些小问题，参见：
+https://github.com/Filsh/yii2-oauth2-server/issues/109
+但在composer仓库中的版本并未修复，正确代码参考：
+https://github.com/Filsh/yii2-oauth2-server/blob/master/migrations/m140501_075311_add_oauth2_server.php
+
+在 oauth_client表中有一条测试记录，需要将http://fake/修改成自定义的domain name。(本例中为：http://api.domain.app/)
+### 模拟发送Post请求(Postman)
+- 获取token
+http://api.domain.app/oauth/token
+
+```
+grant_type:password
+username:tuser
+password:tpass
+client_id:testclient
+client_secret:testpass
+```
+- GET 请求获取code
+http://api.tech.app/oauth/authorize?response_type=code&client_id=testclient&redirect_uri=http://api.tech.app/oauth/authcode&state=xyz
+获取code，然后code换token。
+```
+grant_type:authorization_code
+code:code
+client_id:testclient
+client_secret:dbsecret
+redirect_uri:http://api.tech.app/oauth/authcode
 ```
 
 ## sso系统（TODO）

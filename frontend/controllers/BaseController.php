@@ -8,7 +8,6 @@ use filsh\yii2\oauth2server\filters\ErrorToExceptionFilter;
 use yii\filters\auth\HttpBearerAuth;
 use yii\filters\auth\QueryParamAuth;
 use yii\helpers\ArrayHelper;
-use yii\rest\ActiveController;
 use yii\web\Controller;
 
 class BaseController extends Controller
@@ -35,7 +34,7 @@ class BaseController extends Controller
     /**
      * 一些通用的方法
      */
-    public function somefunction()
+    public function someCommonFunction()
     {
         // TODO
     }
