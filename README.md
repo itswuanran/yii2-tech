@@ -216,10 +216,9 @@ php yii migrate --migrationPath=@vendor/filsh/yii2-oauth2-server/migrations
 ```
 原作者的migrate脚本有些小问题，参见：
 https://github.com/Filsh/yii2-oauth2-server/issues/109
-但在composer仓库中的版本并未修复，正确代码参考：
-https://github.com/Filsh/yii2-oauth2-server/blob/master/migrations/m140501_075311_add_oauth2_server.php
+在composer仓库中的版本并未修复，正确代码参考：https://github.com/Filsh/yii2-oauth2-server/blob/master/migrations/m140501_075311_add_oauth2_server.php
+在oauth_client表中有一条测试记录，需要将http://fake/修改成自定义的domain name。(本例中为：http://api.domain.app)
 
-在 oauth_client表中有一条测试记录，需要将http://fake/修改成自定义的domain name。(本例中为：http://api.domain.app/)
 ### 模拟发送Post请求(Postman)
 - 获取token
 http://api.domain.app/oauth/token
