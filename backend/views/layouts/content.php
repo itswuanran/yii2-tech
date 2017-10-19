@@ -1,6 +1,6 @@
 <?php
-use yii\widgets\Breadcrumbs;
 use dmstr\widgets\Alert;
+use yii\widgets\Breadcrumbs;
 
 ?>
 <div class="content-wrapper">
@@ -20,9 +20,13 @@ use dmstr\widgets\Alert;
                 } ?>
             </h1>
         <?php } ?>
-        <?= Breadcrumbs::widget([
-            'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-        ]) ?>
+
+        <?=
+        Breadcrumbs::widget(
+            [
+                'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+            ]
+        ) ?>
     </section>
 
     <section class="content">
@@ -35,7 +39,7 @@ use dmstr\widgets\Alert;
     <div class="pull-right hidden-xs">
         <b>Version</b> 2.0
     </div>
-    <strong>Copyright &copy; 2015-2016 <a href="http://anruence.com">Anruence Studio</a>.</strong> All rights
+    <strong>Copyright &copy; 2014-2015 <a href="http://almsaeedstudio.com">Almsaeed Studio</a>.</strong> All rights
     reserved.
 </footer>
 
