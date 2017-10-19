@@ -2,12 +2,13 @@
 
 namespace frontend\controllers;
 
-use Yii;
+use filsh\yii2\oauth2server\filters\ErrorToExceptionFilter;
 use filsh\yii2\oauth2server\Module;
 use filsh\yii2\oauth2server\Response;
 use filsh\yii2\oauth2server\Server;
+use Yii;
 use yii\helpers\ArrayHelper;
-use filsh\yii2\oauth2server\filters\ErrorToExceptionFilter;
+use yii\web\HttpException;
 
 class OauthController extends \yii\rest\Controller
 {
@@ -50,11 +51,15 @@ class OauthController extends \yii\rest\Controller
         $server = $module->getServer();
         $server->setConfig('require_exact_redirect_uri', false);
 
+        $params = Yii::$app->request->get();
         if (Yii::$app->request->isGet) {
             Yii::$app->response->format = \yii\web\Response::FORMAT_HTML;
-            $ret = $server->validateAuthorizeRequest($request, new Response());
-            //TODO 错误信息提示
-            return $this->render('authorize');
+            $err = new Response();
+            $ret = $server->validateAuthorizeRequest($request, $err);
+            if (!$ret) {
+                throw new HttpException($err->getStatusCode(), $err->getParameter('error_description'), $err->getParameter('error_uri'));
+            }
+            return $this->render('authorize', ['params' => $params]);
         }
 
         $response = $server->handleAuthorizeRequest($request, new Response(), true);

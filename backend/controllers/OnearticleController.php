@@ -2,12 +2,12 @@
 
 namespace backend\controllers;
 
-use Yii;
 use common\models\Onearticle;
+use Yii;
 use yii\data\ActiveDataProvider;
+use yii\filters\VerbFilter;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
-use yii\filters\VerbFilter;
 
 /**
  * OnearticleController implements the CRUD actions for Onearticle model.
