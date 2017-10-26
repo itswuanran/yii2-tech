@@ -61,9 +61,8 @@ class OauthController extends \yii\rest\Controller
             }
             return $this->render('authorize', ['params' => $params]);
         }
-
         $response = $server->handleAuthorizeRequest($request, new Response(), true);
-        Yii::$app->response->redirect($response->getHttpHeader('Location'));
+        return Yii::$app->response->redirect($response->getHttpHeader('Location'));
     }
 
     public function actionAuthcode()

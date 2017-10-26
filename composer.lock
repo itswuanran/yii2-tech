@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "325f0dfb65549f6d242e26f70f98f3a2",
+    "content-hash": "8a30a24f2c8d65179c8496428de81e6e",
     "packages": [
         {
             "name": "2amigos/yii2-chartjs-widget",
@@ -1094,6 +1094,61 @@
             "time": "2017-09-13T13:08:14+00:00"
         },
         {
+            "name": "desarrolla2/cache",
+            "version": "v2.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/desarrolla2/Cache.git",
+                "reference": "ebd1f7bfd1be605a9b5fbb0a4b25a948a31fe963"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://files.phpcomposer.com/files/desarrolla2/Cache/ebd1f7bfd1be605a9b5fbb0a4b25a948a31fe963.zip",
+                "reference": "ebd1f7bfd1be605a9b5fbb0a4b25a948a31fe963",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "predis/predis": "~1.0.0"
+            },
+            "suggest": {
+                "predis/predis": "Predis support"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Desarrolla2\\Cache\\": "src/",
+                    "Desarrolla2\\Test\\Cache\\": "test/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Daniel González",
+                    "homepage": "http://desarrolla2.com/"
+                }
+            ],
+            "description": "Provides an cache interface for several adapters Apc, Apcu, File, Mongo, Memcache, Memcached, Mysql, Mongo, Redis is supported. New adapters is comming!",
+            "homepage": "https://github.com/desarrolla2/Cache/",
+            "keywords": [
+                "apc",
+                "apcu",
+                "cache",
+                "file",
+                "memcache",
+                "memcached",
+                "mongo",
+                "mysql",
+                "redis"
+            ],
+            "time": "2017-01-18T12:58:33+00:00"
+        },
+        {
             "name": "devgroup/yii2-tag-dependency-helper",
             "version": "1.5.0",
             "source": {
@@ -1468,6 +1523,97 @@
             "time": "2016-10-24T15:52:54+00:00"
         },
         {
+            "name": "jasny/sso",
+            "version": "v0.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jasny/sso.git",
+                "reference": "0cb18c072e7b14db3d2d2549c051f41ca837e5e9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://files.phpcomposer.com/files/jasny/sso/0cb18c072e7b14db3d2d2549c051f41ca837e5e9.zip",
+                "reference": "0cb18c072e7b14db3d2d2549c051f41ca837e5e9",
+                "shasum": ""
+            },
+            "require": {
+                "desarrolla2/cache": "^2.0.0",
+                "jasny/validation-result": "^1.0.0",
+                "php": ">=5.5.0"
+            },
+            "require-dev": {
+                "codeception/codeception": "^2.1.0",
+                "jasny/php-code-quality": "^1.1.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Jasny\\SSO\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Arnold Daniels",
+                    "email": "arnold@jasny.net",
+                    "homepage": "http://www.jasny.net"
+                }
+            ],
+            "description": "Simple Single Sign-On",
+            "homepage": "http://www.jasny.net/articles/simple-single-sign-on-for-php/",
+            "keywords": [
+                "SSO",
+                "auth"
+            ],
+            "time": "2017-02-24T22:44:27+00:00"
+        },
+        {
+            "name": "jasny/validation-result",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jasny/validation-result.git",
+                "reference": "7d09599a6eb90fb4fff2bbc2dfc46b640234372d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://files.phpcomposer.com/files/jasny/validation-result/7d09599a6eb90fb4fff2bbc2dfc46b640234372d.zip",
+                "reference": "7d09599a6eb90fb4fff2bbc2dfc46b640234372d",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.6.0"
+            },
+            "require-dev": {
+                "jasny/php-code-quality": "^1.2"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Jasny\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Arnold Daniels",
+                    "email": "arnold@jasny.net",
+                    "homepage": "http://www.jasny.net"
+                }
+            ],
+            "description": "A result object for validation",
+            "keywords": [
+                "validation"
+            ],
+            "time": "2016-03-14T22:54:14+00:00"
+        },
+        {
             "name": "johnitvn/yii2-ajaxcrud",
             "version": "2.1.3",
             "source": {
@@ -1763,16 +1909,16 @@
         },
         {
             "name": "kartik-v/yii2-dialog",
-            "version": "v1.0.1",
+            "version": "v1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kartik-v/yii2-dialog.git",
-                "reference": "4aaf8918c6dbd90218b6ad9036b1aae211480716"
+                "reference": "cd80ac5bf7c3f43d0452b1b3ff1559f3db053674"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://files.phpcomposer.com/files/kartik-v/yii2-dialog/4aaf8918c6dbd90218b6ad9036b1aae211480716.zip",
-                "reference": "4aaf8918c6dbd90218b6ad9036b1aae211480716",
+                "url": "https://files.phpcomposer.com/files/kartik-v/yii2-dialog/cd80ac5bf7c3f43d0452b1b3ff1559f3db053674.zip",
+                "reference": "cd80ac5bf7c3f43d0452b1b3ff1559f3db053674",
                 "shasum": ""
             },
             "require": {
@@ -1811,7 +1957,7 @@
                 "modal",
                 "yii2"
             ],
-            "time": "2016-09-13T18:15:26+00:00"
+            "time": "2017-10-20T11:01:19+00:00"
         },
         {
             "name": "kartik-v/yii2-editable",
@@ -1868,16 +2014,16 @@
         },
         {
             "name": "kartik-v/yii2-grid",
-            "version": "v3.1.5",
+            "version": "v3.1.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kartik-v/yii2-grid.git",
-                "reference": "ffccccb8ab23838461483a6139814f66187bcb3b"
+                "reference": "b74e17902f99fb52c26cee678567b53f12eb8f7b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://files.phpcomposer.com/files/kartik-v/yii2-grid/ffccccb8ab23838461483a6139814f66187bcb3b.zip",
-                "reference": "ffccccb8ab23838461483a6139814f66187bcb3b",
+                "url": "https://files.phpcomposer.com/files/kartik-v/yii2-grid/b74e17902f99fb52c26cee678567b53f12eb8f7b.zip",
+                "reference": "b74e17902f99fb52c26cee678567b53f12eb8f7b",
                 "shasum": ""
             },
             "require": {
@@ -1917,7 +2063,7 @@
                 "widget",
                 "yii2"
             ],
-            "time": "2017-06-09T10:08:02+00:00"
+            "time": "2017-10-22T17:25:19+00:00"
         },
         {
             "name": "kartik-v/yii2-krajee-base",
@@ -5240,37 +5386,40 @@
         },
         {
             "name": "myclabs/deep-copy",
-            "version": "1.6.1",
+            "version": "1.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/myclabs/DeepCopy.git",
-                "reference": "8e6e04167378abf1ddb4d3522d8755c5fd90d102"
+                "reference": "3b8a3a99ba1f6a3952ac2747d989303cbd6b7a3e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://files.phpcomposer.com/files/myclabs/DeepCopy/8e6e04167378abf1ddb4d3522d8755c5fd90d102.zip",
-                "reference": "8e6e04167378abf1ddb4d3522d8755c5fd90d102",
+                "url": "https://files.phpcomposer.com/files/myclabs/DeepCopy/3b8a3a99ba1f6a3952ac2747d989303cbd6b7a3e.zip",
+                "reference": "3b8a3a99ba1f6a3952ac2747d989303cbd6b7a3e",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.4.0"
+                "php": "^5.6 || ^7.0"
             },
             "require-dev": {
-                "doctrine/collections": "1.*",
-                "phpunit/phpunit": "~4.1"
+                "doctrine/collections": "^1.0",
+                "doctrine/common": "^2.6",
+                "phpunit/phpunit": "^4.1"
             },
             "type": "library",
             "autoload": {
                 "psr-4": {
                     "DeepCopy\\": "src/DeepCopy/"
-                }
+                },
+                "files": [
+                    "src/DeepCopy/deep_copy.php"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
             "description": "Create deep copies (clones) of your objects",
-            "homepage": "https://github.com/myclabs/DeepCopy",
             "keywords": [
                 "clone",
                 "copy",
@@ -5278,7 +5427,7 @@
                 "object",
                 "object graph"
             ],
-            "time": "2017-04-12T18:52:22+00:00"
+            "time": "2017-10-19T19:58:43+00:00"
         },
         {
             "name": "phar-io/manifest",

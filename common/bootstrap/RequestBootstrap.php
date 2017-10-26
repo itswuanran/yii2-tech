@@ -2,7 +2,6 @@
 
 namespace common\bootstrap;
 
-use Yii;
 use yii\base\BootstrapInterface;
 
 class RequestBootstrap implements BootstrapInterface

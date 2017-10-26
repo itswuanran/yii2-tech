@@ -45,7 +45,8 @@
         "devgroup/yii2-tag-dependency-helper": "*",
         "philippfrenzel/yii2fullcalendar": "*",
         "symfony/dom-crawler": "*",
-        "symfony/css-selector": "*"
+        "symfony/css-selector": "*",
+        "jasny/sso": "^0.3.0"
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "*",
