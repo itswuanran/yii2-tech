@@ -41,8 +41,8 @@
                         'icon' => 'circle-o',
                         'url' => '#',
                         'items' => [
-                            ['label' => '商品管理', 'icon' => 'circle-o', 'url' => '/product',],
-                            ['label' => '抽奖管理', 'icon' => 'circle-o', 'url' => '/lottery',],
+                            ['label' => '商品管理', 'icon' => 'circle-o', 'url' => '/product/index',],
+                            ['label' => '抽奖管理', 'icon' => 'circle-o', 'url' => '/lottery/index',],
                         ],
                     ],
                     [
